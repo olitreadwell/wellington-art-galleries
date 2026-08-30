@@ -8,8 +8,10 @@ Vercel Cron, and record every run in `scrapes` (DB mode) or
 
 | Source | What we get | Status |
 | --- | --- | --- |
-| `example-listings` (this repo's `scripts/examples/listing-entries.json`) | seed pipeline demo | ✅ offline demo |
-
+| `https://www.wellingtonnz.com/visit/see-and-do/contemporary-art-galleries` | 10 commercial galleries with addresses + descriptions | ✅ working (seed, 2026-08-30) |
+| `https://artsaccess.org.nz/community-galleries-directory` | community galleries (Thistle Hall, Sunday Night Club, Hutt Art Odlin) + contact details | ✅ working |
+| `https://www.eventfinda.co.nz/venues` | venue pages for galleries without live websites (Bartley, Solander) | ✅ working |
+| official gallery websites (21 domains, curl HEAD verified 2026-08-30) | institutional + commercial listings, coordinates via Nominatim | ✅ working |
 <!-- SEED-SOURCES -->
 
 Projects run `pnpm run setup` to list their own initial sources here; the
@@ -30,6 +32,8 @@ scraper framework in `src/lib/scrapers/` turns each into a `Scraper`.
 ## Planned
 
 - Real scrapers for the project's seed sources, replacing the example
+- `https://www.nzmuseums.co.nz/` (JS-heavy; low yield for commercial galleries — revisit for region museums)
+- `https://www.wellington.govt.nz/arts-and-culture` (council arts pages)
 - Headless-browser fallback for JS-rendered listing pages
 - Enrichment passes (socials, contact, coordinates) with sources per field
 

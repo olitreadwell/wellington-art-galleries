@@ -60,8 +60,8 @@ describe('item repository (db mode)', () => {
       listSources(),
     ]);
     expect(cities.length).toBeGreaterThan(0);
-    expect(categories.some((c) => c.category === 'example')).toBe(true);
-    expect(sources).toContain('Template seed data');
+    expect(categories.some((c) => c.category === 'commercial')).toBe(true);
+    expect(sources).toContain('Official website');
   });
 
   it('fetches one item and misses unknown ones', async () => {

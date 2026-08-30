@@ -1,10 +1,11 @@
 import { AxeBuilder } from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
+import { seedItems } from '../src/data/items';
 
 const routes = [
   '/',
   '/items',
-  '/items/example-place-one',
+  `/items/${seedItems[0].id}`,
   '/search',
   '/map',
   '/opt-out',

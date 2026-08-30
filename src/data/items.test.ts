@@ -34,8 +34,10 @@ describe('seed dataset integrity', () => {
     }
   });
 
-  it('marks at least one seed item as stale for UI coverage', () => {
-    expect(seedItems.some((item) => item.lastVerified < '2026-01-01')).toBe(true);
+  it('verifies every seed item was verified within the last 180 days', () => {
+    for (const item of seedItems) {
+      expect(item.lastVerified >= '2026-03-01').toBe(true);
+    }
   });
 });
 
